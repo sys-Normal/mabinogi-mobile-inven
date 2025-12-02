@@ -1,0 +1,44 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Notice {
+  id        Int      @id @default(autoincrement())
+  title     String
+  content   String
+  createdAt DateTime @default(now())
+}
+
+model Inventory {
+  id Int @id @default(autoincrement())
+}
+
+model Character {
+  id Int @id @default(autoincrement())
+  userId Int
+  job String
+  level Int
+  last_login DateTime @default(now())
+  representative Boolean
+  silver_coin Int
+  demon_tribute Int
+
+  user User @relation(fields: [userId], references: [id])
+}
+
+model User {
+  id Int @id @default(autoincrement())
+  weekly_mission Int
+  guild_mission Int
+  // event_coin Int
+  character Character[]
+}
+
