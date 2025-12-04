@@ -1,12 +1,12 @@
-import MainNavigation from "@/components/MainNavigation";
-import styles from "./page.module.css";
+import MainNavigation from "@/components/MainNavigation/MainNavigation";
+import styles from "./page.module.scss";
+import FlexibleHeader from "@/components/FlexibleHeader/FlexibleHeader";
 
 export default function Main() {
   return (
     <div className={styles.page}>
-      {/* 마비노기 모바일 숙제 관리 */}
       <main>
-        <MainNavigation />
+        <></>
       </main>
     </div>
   );

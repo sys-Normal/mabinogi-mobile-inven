@@ -1,0 +1,108 @@
+@use "@/styles/breakpoints" as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(15, 15, 15, 0.94);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-inline: 16px;
+  height: 56px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mainLogo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logoImage {
+  width: auto;
+  height: 24px;
+}
+.logoText {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #ffb868;
+}
+.nav {
+  display: none;
+}
+
+.navItem {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 14px;
+  padding: 6px 0;
+}
+
+.loginButton {
+  //
+}
+
+.menuButtonWrapper {
+  display: inline-block;
+}
+
+.menuButton {
+  padding: 4px;
+  color: #ffffff;
+  font-size: 22px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+@media (min-width: $bp-tablet) {
+  .container {
+    height: 64px;
+    padding-inline: 24px;
+  }
+
+  .logoImage {
+    height: 28px;
+  }
+
+  .logoText {
+    font-size: 20px;
+  }
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  .navItem {
+    font-size: 15px;
+  }
+  .menuButtonWrapper {
+    display: none;
+  }
+}
+@media (min-width: $bp-desktop) {
+  .container {
+    height: 72px;
+    padding-inline: 32px;
+  }
+  .logoImage {
+    height: 32px;
+  }
+  .logoText {
+    font-size: 22px;
+  }
+  .nav {
+    gap: 32px;
+  }
+  .navItem {
+    font-size: 16px;
+  }
+}
